@@ -1,0 +1,14 @@
+<!--<h2>{{rate.currency}} Details</h2>
+<div><span>CURRENCY:</span> {{rate.currency}}</div>
+<div><span>RATE</span> {{rate.rate}}</div>-->
+<div *ngIf="loading">
+    <h1>Loading...</h1>
+</div>
+<div *ngIf="ratesArray">
+    <h2>Rates List</h2>
+    <ul>
+        <li *ngFor="let rate of ratesArray">
+            <span>{{rate.currency}}</span> --- {{rate.rate | currency}}
+        </li>
+    </ul>
+</div>
